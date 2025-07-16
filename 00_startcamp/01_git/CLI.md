@@ -251,12 +251,19 @@ $ git add .
 
 ~/Desktop/lectures (master)
 $ git commit -m "원격 저장소 활용 연습"
-On branch master
-Your branch is up to date with 'origin/master'.
+[master 08514d7] 원격 저장소 활용 연습
+ 1 file changed, 262 insertions(+)
 
 nothing to commit, working tree clean
 
 ~/Desktop/lectures (master)
 $ git push
-Everything up-to-date
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 28 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 3.14 KiB | 3.14 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/eunsue1222/TIL.git
+   9c2aae4..08514d7  master -> master
 ```
