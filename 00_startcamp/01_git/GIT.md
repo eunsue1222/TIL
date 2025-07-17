@@ -45,7 +45,7 @@ Desktop/lecture/00_startcamp/01_git
 ## Git의 동작
 - git init: 로컬 저장소 설정(초기화)
 - git add: 변경사항이 있는 파일을 staging area에 추가
-- git commit: staging area에 있는 파일들을 저장소에 기록
+- git commit -m "commit text": staging area에 있는 파일들을 저장소에 기록 (:q)
 - git commit --amend: Commit 메시지 또는 전체 수정
 - git status: 현재 로컬 저장소의 파일 상태 보기
 - git log: commit history 보기
@@ -141,7 +141,7 @@ Date:   Wed Jul 16 15:50:47 2025 +0900
 
     마크다운 연습
 ```
----
+
 ## 저장소
 - git remote -v: 현재 로컬 저장소에 등록된 원격 저장소 목록 보기
 - git remote rm 원격_저장소_이름: 현재 로컬 저장소에 등록된 원격 저장소 삭제
@@ -234,7 +234,7 @@ $ git commit -m "커밋 연습"
 $ git push origin master
 ```
 
-## Gitignore
+#### Gitignore
 - Git에서 특정 파일이나 디렉토리를 추적하지 않도록 설정하는 데 사용되는 텍스트 파일
 - 프로젝트에 따라 공유하지 않아야 하는 것들도 존재하기 때문
 - 이미 git의 관리를 받은 이력이 있는 파일이나 디렉토리는 나중에  gitignore에 작성해도 적용되지 않음 (git rm --cached 명령어를 통해 git 캐시에서 삭제 필요)
@@ -243,8 +243,219 @@ $ git push origin master
 .파일명
 ```
 
-##README.md
+#### README.md
 - 프로젝트에 대한 설명, 사용 방법, 문서화된 정보 등을 포함하는 역할
 - Markdown 형식으로 작성되며, 프로젝트의 사용자, 개발자, 혹은 기여자들에게 프로젝트에 대한 전반적인 이해와 활용 방법을 제공하는데 사용
 - 주로 프로젝트의 소개, 설치 및 설정 방법, 사용 예시, 라이선스 정보, 기여 방법 등을 포함
 - 반드시 저장소 최상단에 위치해야 원격 저장소에서 올바르게 출력됨
+---
+## Git Branch
+- 나뭇가지처럼 여러 갈래로 작업 공간을 나누어 독립적으로 작업할 수 있도록 도와주는 Git의 도구
+- 독립된 개발 환경을 형성하기 때문에 원본(master)에 대해 안전
+- 하나의 작업은 하나의 브랜치로 나누어 진행되므로 체계적으로 협업과 개발이 가능
+- 손쉽게 브랜치를 생성하고 브랜치 사이를 이동할 수 있음
+```
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git init
+Initialized empty Git repository in C:/Users/SSAFY/Desktop/git_branch_practice/.git/
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ touch settings.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git add settings.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git commit -m "초기 설정"
+[master (root-commit) b4817bb] 초기 설정
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 settings.py
+```
+1. 팀원 A는 로그인 기능을 작업한다.
+2. 팀원 B는 게시글 작성 기능을 작업한다.
+3. 팀원 A와 B는 모두 setting.py의 내용을 필요로 한다.  
+<br>
+**Viktor 작업**
+```
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch -c viktor/login
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch
+* master
+  viktor/login
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git switch viktor/login
+Switched to branch 'viktor/login'
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (viktor/login)
+$ touch login.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (viktor/login)
+$ git add login.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (viktor/login)
+$ git commit -m "login"
+[viktor/login 2bf7e02] login
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 login.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (viktor/login)
+$ git log
+commit 2bf7e0224c4f68a9fe84b33090b2499b62d12845 (HEAD -> viktor/login)
+Author: 김은수 <eunsue1222@gmail.com>
+Date:   Thu Jul 17 14:11:23 2025 +0900
+
+    login
+
+commit b4817bbd2925b70c9c64cc6436ba2bc8a5bb0255 (master, harry/article)
+Author: 김은수 <eunsue1222@gmail.com>
+Date:   Thu Jul 17 14:05:54 2025 +0900
+
+    초기 설정
+```
+
+**Harry 작업**
+```
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch -c harry/article
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch
+  harry/article
+* master
+  viktor/login
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git switch harry/article
+Switched to branch 'harry/article'
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (harry/article)
+$ touch article.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (harry/article)
+$ git add .
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (harry/article)
+$ git commit -m "article 작업 완료"
+[harry/article dcd5c64] article 작업 완료
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 article.py
+```
+**Master**
+```
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (harry/article)
+$ git branch
+* harry/article
+  master
+  viktor/login
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (harry/article)
+$ git switch master
+Switched to branch 'master'
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git merge viktor/login
+Updating b4817bb..2bf7e02
+Fast-forward
+ login.py | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 login.py
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git merge harry/article
+Merge made by the 'ort' strategy.
+ article.py | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 article.py
+
+ SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git log
+commit da9b9e8abd58e49d9a0d7cc4759cc6e7e4408f84 (HEAD -> master)
+Merge: 2bf7e02 dcd5c64
+Author: 김은수 <eunsue1222@gmail.com>
+Date:   Thu Jul 17 14:18:38 2025 +0900
+
+    Merge branch 'harry/article'
+
+commit dcd5c64d29e021b62ce33ae0f685531f68398bce (harry/article)
+Author: 김은수 <eunsue1222@gmail.com>
+Date:   Thu Jul 17 14:14:02 2025 +0900
+
+    article 작업 완료
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git log --oneline --graph
+*   da9b9e8 (HEAD -> master) Merge branch 'harry/article'
+|\
+| * dcd5c64 (harry/article) article 작업 완료
+* | 2bf7e02 (viktor/login) login
+|/
+* b4817bb 초기 설정
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch
+  harry/article
+* master
+  viktor/login
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch -d viktor/login
+Deleted branch viktor/login (was 2bf7e02).
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch -d harry/article
+Deleted branch harry/article (was dcd5c64).
+
+SSAFY@DESKTOP-763H707 MINGW64 ~/Desktop/git_branch_practice (master)
+$ git branch
+* master
+```
+
+## Merge
+1. Fast-Forward Merge
+2. 3-Way Merge
+```
+$ git pull origin master
+$ git add
+$ git commit
+$ git push origin master
+```
+1. master 브랜치는 아무도 수정하지 않는다.
+2. master 브랜치는 최초 설정 (모든 팀원이 함께 쓸 내용 생성시만 사용)
+    - git add . git commit, push 까지 모두 수행
+3. 팀장이 develop (혹은 dev) 브랜치를 생성한다.
+
+
+1. 팀장이 새 레포지토리를 생성한다.
+2. 팀원을 초대한다.
+3. 팀장은 clone 받은 뒤, develop 브랜치를 생성하고, push한다.
+    - 단, merge request 는 하지 않는다.
+```
+git branch -c develop
+git switch develop
+touch settings.py
+git add settings.py
+git push origin develop
+```
+4. 팀원은 master를 클론 받은뒤, 로컬에서 develop 브랜치를 생성하고, develop 브랜치에서 git pull origin develop을 진행한다. 그 후에, 개인 브랜치를 생성한다. 개인 브랜치에서 settings.py 수정하거나 새로운 파일을 생성하고 git push origin 개인브랜치, merge request 수행.
+```
+$ git clone https://lab.ssafy.com/whimin0319/git_dev_practice.git
+$ git branch -c develop
+$ git switch develop
+$ git pull origin develop
+$ git branch -c eunsu
+$ git add settings.py
+$ git commit -m "eunsu settings.py"
+$ git push origin eunsu
+
+
+
+```
+5. 팀장은 팀원이 MR 남겼다고 하면, Merge를 develop에 시도한다. 
+    - 시도해서 성공하면? merge 완료했다고 알리고 하던일 마저한다.
+    - 시도해서 실패하면? MR 보낸 사람에게 conflict 해결하고 다시 MR 보내라고 한다. 기왕이면 어디서 문제 발생한지도 알려준다.
+6. 팀원 1 혹은 2는 MR 발생 후, 팀장이 merge 했다고 알리면, 본인 브랜치에서 git pull origin develop을 해서, 추가 작업을 진행하거나 develop 브랜치에서 pull 받은 뒤, 본인 브랜치에서 merge develop을 한다.
+```
+```
