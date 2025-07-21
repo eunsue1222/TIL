@@ -1,0 +1,11 @@
+{
+  "main": {
+    "temp": 15,
+    "humidity": 60
+  },
+  "weather": [
+    {"main": "Clouds", "description": "overcast clouds"}
+  ],
+  "wind": {"speed": 3.5},
+  "rain": null
+}
