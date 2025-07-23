@@ -1,0 +1,19 @@
+h2 {
+  color: purple !important;
+}
+
+p {
+  color: orange;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+#red {
+  color: red;
+}
