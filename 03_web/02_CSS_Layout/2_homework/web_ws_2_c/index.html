@@ -1,0 +1,74 @@
+<!--
+각 div 에 적용된 class 이름을 참고하여 알맞은 position 속성을 부여한다. 
+style.css 파일을 생성한다. 
+필요한 속성들을 직접 정의한다. 
+화면에 출력되는 결과를 확인하시오.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Positioning with Scroll Example</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    * {
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        padding: 0 10px;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .static-example {
+        position: static;
+        height: 50px;
+        width: 90%;
+        background-color: lightgray;
+        margin-bottom: 20px;
+    }
+
+    .relative-example {
+        position: relative;
+        height: 50px;
+        width: 90%;
+        background-color: skyblue;
+        top: 10px;
+        left: 20px;
+    }
+
+    .absolute-example {
+        position: absolute;
+        height: 50px;
+        width: 15%;
+        background-color: lightgreen;
+        top: 10px;
+        left: 15px;
+    }
+
+    .sticky-example {
+        position: sticky;
+        height: 50px;
+        width: 90%;
+        background-color: lightcoral;
+        margin-bottom: 500px;
+    }
+
+    .filler-content {
+        position: fixed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="static-example">Static</div>
+    <div class="relative-example">Relative</div>
+    <div class="absolute-example">Absolute</div>
+    <div class="sticky-example">Sticky</div>
+    <div class="filler-content"></div> <!-- 추가된 스크롤용 콘텐츠 -->
+  </div>
+</body>
+</html>
