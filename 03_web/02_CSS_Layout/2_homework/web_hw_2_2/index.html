@@ -1,0 +1,59 @@
+<!--
+카드의 크기는 자유롭게 구성한다.
+이미지의 크기는 부모 너비와 같은 크기가 되도록 한다.
+부모의 범위를 벗어나서는 안된다.
+이름은 이미지의 위에 겹쳐보이도록 위치를 수정한다.
+부모를 기준으로 아랫쪽 0px에 위치한다.
+그 외 속성은 자유롭게 구성한다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .card {
+      width: 300px;
+      border: 2px solid black;
+      padding: 10px;
+    }
+
+    .card-header {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-name{
+      position: absolute;
+      background-color: peachpuff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <img src="image.png" alt="Profile Image">
+      <p class="card-name">Name</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
+  </div>
+</body>
+</html>
