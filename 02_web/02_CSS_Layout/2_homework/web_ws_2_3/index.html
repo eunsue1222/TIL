@@ -1,3 +1,16 @@
+<!--
+mdn 문서 참고 ) https://developer.mozilla.org/ko/docs/Web/CSS/position
+h1태그 제목 아래 베스트 셀러 목록 섹션을 생성한다.
+2번째 도서 카드 아래 신간 도서 목록 섹션을 생성한다.
+생성된 두 섹션은 일반적인 상황에서는 제 자리를 지키고 있으나, 화면의 상단 끝에 다다르게되면, 다음 섹션을 만나기 전까지 스크롤을 따라 이동하도록 위치를 설정한다.
+섹션의 배경 색, 글씨 크기 등은 자유롭게 구성한다.
+주어진 CSS 속성을 수정하여 화면 좌측 하단에 고정된 버튼이 만들어 지도록 한다.
+버튼은 TOP 글자로 된 a 태그를 자식으로 가지고 있다.
+a 태그의 href 속성은 #으로 작성한다.
+
+실행 결과는 첨부된 result 폴더의 이미지를 참고한다.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +26,15 @@
     h1 {
       text-align: center;
       color: #333;
+    }
+
+    .section-title {
+      position: sticky;
+      top: 0;
+      padding: 30px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     .book-container {
@@ -44,18 +66,8 @@
       color: #888;
     }
 
-    .section-title {
-      position: sticky;  /* 스크롤에 따라 따라오다가 다음 요소 만나면 멈춤 */
-      top: 0;  /* 스크롤 시 뷰포트의 맨 위에 닿을 때부터 sticky 작동 */
-      background-color: #fff;
-      padding: 30px;
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
     .top-button {
-      position: fixed;  /* 항상 화면 특정 위치에 고정 */
+      position: fixed;
       right: 20px;
       bottom: 20px;
       background-color: #333;
@@ -65,7 +77,7 @@
     }
 
     .top-button a {
-      text-decoration: none;  /* a태그 기본 밑줄 제거 */
+      text-decoration: none;
       font-size: 16px;
       color: #fff;
     }
@@ -75,6 +87,7 @@
   <h1>도서 관리 서비스에 오신 것을 환영합니다</h1>
 
   <div class="section-title">베스트 셀러 목록</div>
+
   <div class="book-container">
     <h2 class="book-title">도서 제목 1</h2>
     <p class="book-author">저자 1</p>
@@ -88,6 +101,7 @@
   </div>
 
   <div class="section-title">신간 도서 목록</div>
+
   <div class="book-container">
     <h2 class="book-title">도서 제목 3</h2>
     <p class="book-author">저자 3</p>

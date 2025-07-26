@@ -1,3 +1,10 @@
+<!--
+position과 flex, boxmodel 속성은 반드시 사용하여야 한다.
+그 외 화면 구성은 자유롭게 진행한다.
+
+실행 결과는 첨부된 result 폴더의 이미지를 참고한다.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +12,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
       margin: 0;
       padding: 0;
       display: flex;
@@ -12,20 +20,71 @@
       align-items: center;
     }
 
+    .title {
+      height: 150px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     h1 {
       text-align: center;
-      color: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      background-color: darkgray;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 3px;
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .section-title {
+      background-color: #fff;
+      padding: 30px 0;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .book-container {
       box-sizing: border-box;
-      background-color: #f7f7f7;
+      background-color: #fff;
       width: 300px;
       padding: 20px;
       margin: 10px;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       text-align: center;
+    }
+
+    img {
+      width: 100%
     }
 
     .book-title {
@@ -46,16 +105,6 @@
       color: #888;
     }
 
-    .section-title {
-      background-color: #fff;
-      padding: 30px 0;
-      font-size: 20px;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
     .top-button {
       position: fixed;
       right: 20px;
@@ -71,60 +120,6 @@
       font-size: 16px;
       color: #fff;
     }
-
-    .book-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* 3가지 섹션 별 목록을 감싸는 컨테이너 */
-    .container {
-      display: flex;
-      flex-wrap: wrap;  /* 줄바꿈 허용 */
-      justify-content: center;
-    }
-
-    .title {
-      height: 150px;
-      width: 100%;
-      background-color: #363636;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .navbar {
-      height: 50px;
-      width: 100%;
-      background-color: #565656;
-      display: flex;  /* 가로 배치 */
-      align-items: center;
-      justify-content: center;
-      position: sticky;  /* 스크롤 시 고정 */
-      top: 0;
-    }
-
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 3px;
-    }
-
-    img {
-      width: 100%;  /* 이미지 너비가 카드를 넘지 않도록 설정 */
-    }
-
-    .footer {
-      width: 100%;
-      height: 70px;
-      background-color: #363636;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
-    }
   </style>
 </head>
 <body>
@@ -135,7 +130,7 @@
   <div class="navbar">
     <a href="#">홈</a>
     <p>|</p>
-    <a href="#">베스트 셀러</a>
+    <a href="#">베스트셀러</a>
     <p>|</p>
     <a href="#">신간 도서</a>
     <p>|</p>
@@ -146,64 +141,61 @@
     <div class="section-title">베스트 셀러 목록
       <div class="book-list">
         <div class="book-container">
-          <img src="book1.jpg" alt="">
+          <img src="book.png" alt="">
           <h2 class="book-title">도서 제목 1</h2>
           <p class="book-author">작가 이름 1</p>
           <p class="book-description">도서 설명 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
         </div>
-  
+
         <div class="book-container">
-          <img src="book1.jpg" alt="">
+          <img src="book.png" alt="">
           <h2 class="book-title">도서 제목 2</h2>
           <p class="book-author">작가 이름 2</p>
-          <p class="book-description">도서 설명 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
+          <p class="book-description">도서 설명 2 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
         </div>
       </div>
-    </div>
-  
+    </div> 
+
     <div class="section-title">신간 도서 목록
       <div class="book-list">
         <div class="book-container">
-          <img src="book1.jpg" alt="">
+          <img src="book.png" alt="">
           <h2 class="book-title">도서 제목 3</h2>
           <p class="book-author">작가 이름 3</p>
-          <p class="book-description">도서 설명 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
+          <p class="book-description">도서 설명 3 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-  
+
         <div class="book-container">
-          <img src="book1.jpg" alt="">
+          <img src="book.png" alt="">
           <h2 class="book-title">도서 제목 4</h2>
           <p class="book-author">작가 이름 4</p>
           <p class="book-description">도서 설명 4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
         </div>
       </div>
     </div>
-  
+
     <div class="section-title">사서 추천 도서 목록
       <div class="book-list">
         <div class="book-container">
-          <img src="book1.jpg" alt="">
+          <img src="book.png" alt="">
           <h2 class="book-title">도서 제목 5</h2>
           <p class="book-author">작가 이름 5</p>
-          <p class="book-description">도서 설명 5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
+          <p class="book-description">도서 설명 5 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
         </div>
-  
+
         <div class="book-container">
-          <img src="book1.jpg" alt="">
+          <img src="book.png" alt="">
           <h2 class="book-title">도서 제목 6</h2>
           <p class="book-author">작가 이름 6</p>
-          <p class="book-description">도서 설명 6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
+          <p class="book-description">도서 설명 6 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="footer">
-    @ 2023 도서 관리 서비스. All rights reserved.
-  </div>
-
   <div class="top-button">
     <a href="#">TOP</a>
   </div>
+
 </body>
 </html>

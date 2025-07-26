@@ -1,3 +1,13 @@
+<!--
+h1 태그로 작성된 대제목은 화면의 중앙에 오도록한다.
+책 제목은 18px 크기의 굵은 글씨로 작성한다.
+책 저자는 14px 크기의 글씨로 작성한다.
+책 설명은 14px 크기의 글씨로 작성한다.
+제목과 저자 설명 사이에는 각각 10px 씩의 여유공간이 있어야한다.
+
+실행 결과는 첨부된 result 폴더의 이미지를 참고한다.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +22,9 @@
 
     h1 {
       text-align: center;
-      color: #333;
     }
 
     .book-container {
-      display: inline-block;  /* 한 줄에 여러개의 카드 */
-      box-sizing: border-box;  /* padding 포함하여 카드 너비 유지 */
-      width: 300px;  /* 카드의 너비 300px */
-      padding: 20px;  /* 테두리를 기준으로 20px 여백 공간 */
-      margin: 10px;  /* 카드 간 상하좌우 10px 여백 공간*/
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,47 +33,44 @@
     .book-title {
       font-size: 18px;
       font-weight: bold;
-      color: #333;
       margin-bottom: 10px;
     }
 
     .book-author {
       font-size: 14px;
-      color: #666;
       margin-bottom: 10px;
     }
 
     .book-description {
       font-size: 14px;
-      color: #888;
     }
   </style>
 </head>
 <body>
   <h1>도서 관리 서비스에 오신 것을 환영합니다</h1>
-
+  
   <div class="book-container">
     <h2 class="book-title">도서 제목 1</h2>
     <p class="book-author">저자 1</p>
-    <p class="book-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
+    <p class="book-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>  
   </div>
 
   <div class="book-container">
     <h2 class="book-title">도서 제목 2</h2>
     <p class="book-author">저자 2</p>
-    <p class="book-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+    <p class="book-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>  
   </div>
 
   <div class="book-container">
     <h2 class="book-title">도서 제목 3</h2>
     <p class="book-author">저자 3</p>
-    <p class="book-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="book-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>  
   </div>
 
   <div class="book-container">
     <h2 class="book-title">도서 제목 4</h2>
     <p class="book-author">저자 4</p>
-    <p class="book-description">Voluptas ut eum consequatur labore voluptates quaerat minima esse asperiores exercitationem?</p>
+    <p class="book-description">Voluptas ut eum consequatur labore voluptates quaerat minima esse asperiores exercitationem?</p>  
   </div>
 </body>
 </html>

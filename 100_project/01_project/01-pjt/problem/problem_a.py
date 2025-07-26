@@ -1,4 +1,4 @@
-import requests
+import requests 
 import csv
 
 # TMDB API 키 설정

@@ -7,8 +7,13 @@
       .flex-container {
           margin: 0 auto;
           height: 200px; /* 컨테이너의 높이 */
-          width: 500px; /*컨테이너의 너비*/
+          width: 500px; /* 컨테이너의 너비 */
           background-color: lightgrey; /* 배경색 */
+
+          display: flex;
+          /* 수직 방향, 수평 방향  모두 가운데 정렬 */
+          justify-content: center;  /* 주 축(가로) 방향 정렬 */
+          align-items: center;  /* 교차 축(세로) 방향 정렬 */
       }
   
       .flex-item {

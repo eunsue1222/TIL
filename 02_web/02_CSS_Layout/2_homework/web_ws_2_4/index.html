@@ -1,3 +1,10 @@
+<!--
+각 섹션별 도서 목록을 flex를 사용하여 레이아웃을 구성하시오.
+각 요소들은 수평, 수직 중앙 정렬이 될 수 있도록 구성한다.
+
+실행 결과는 첨부된 result 폴더의 이미지를 참고한다.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,15 +15,33 @@
       background-color: #f7f7f7;
       margin: 0;
       padding: 20px;
-      /* 전체 페이지를 세로 방향으로 정렬하기 위한 flexbox 설정 */
       display: flex;
-      flex-direction: column;  /* 위에서 아래로 배치 */
-      align-items: center;  /* 중앙 정렬 */
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
       text-align: center;
       color: #333;
+    }
+
+    .section-title {
+      position: sticky;
+      top: 0px;
+      background-color: #fff;
+      padding: 30px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .book-container {
@@ -48,20 +73,6 @@
       color: #888;
     }
 
-    .section-title {
-      position: sticky;
-      top: 0px;
-      background-color: #fff;
-      padding: 30px;
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      width: 100%;
-      /* 가운데 정렬 */
-      display: flex;
-      justify-content: center;
-    }
-
     .top-button {
       position: fixed;
       right: 20px;
@@ -70,7 +81,6 @@
       padding: 10px 20px;
       border-radius: 5px;
       border: none;
-      
     }
 
     .top-button a {
@@ -78,26 +88,20 @@
       font-size: 16px;
       color: #fff;
     }
-
-    /* 도서 목록 컨테이너 */
-    .book-list {
-      display: flex;
-      flex-wrap: wrap;  /* 넘치면 다음 줄로 */
-      justify-content: center;  /* 가로 가운데 정렬 */
-    }
   </style>
 </head>
 <body style="height: 3000px;">
   <h1>도서 관리 서비스에 오신 것을 환영합니다</h1>
 
   <div class="section-title">베스트 셀러 목록</div>
+
   <div class="book-list">
     <div class="book-container">
       <h2 class="book-title">도서 제목 1</h2>
       <p class="book-author">저자 1</p>
       <p class="book-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus vel neque ullamcorper tempus.</p>
     </div>
-  
+
     <div class="book-container">
       <h2 class="book-title">도서 제목 2</h2>
       <p class="book-author">저자 2</p>
@@ -106,6 +110,7 @@
   </div>
 
   <div class="section-title">신간 도서 목록</div>
+  
   <div class="book-list">
     <div class="book-container">
       <h2 class="book-title">도서 제목 3</h2>
