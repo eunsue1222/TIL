@@ -1,0 +1,80 @@
+<!--
+마우스 움직임에 따라 각 요소의 콘텐츠를 다음과 같이 변경하시오.
+
+h1 요소
+마우스가 h1 요소 위에 올라가면 h1의 콘텐츠가 새로운 문자열로 변경된다.
+마우스가 h1 요소 바깥으로 나가면 h1의 콘텐츠가 기존 문자열로 변경된다.
+
+h2 요소
+h2 요소를 더블클릭하면 폰트 컬러가 crimson으로 변경된다.
+다시 더블클릭하면 폰트 컬러 crimson이 해제된다.
+
+p 요소
+p 요소 위에서 마우스 휠을 움직이면
+랜덤 문자열은 제공된 'randomTexts'를 사용한다.
+Javascript의 내장 객체 'Math'를 활용한다. ('floor()', 'random()')
+
+참고 문서
+https://developer.mozilla.org/en-US/docs/Web/API/Element#events
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .font-crimson {
+      color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="heading">Hover me!</h1>
+  <h2 class="sub-heading">Double Click me!</h2>
+  <p class="contents">Lorem ipsum dolor sit amet consectetur</p>
+
+  <script>
+    const randomTexts = [
+      'Lorem ipsum dolor sit amet consectetu',
+      'adipisicing elit. Repellendus delectus quam',
+      'similique quo ipsam maxime totam alias',
+      'quibusdam repudiandae voluptas dicta',
+      'voluptas voluptatibus exercitationem officiis'
+    ]
+
+    // 아래에 코드 작성
+    const h1Tag = document.querySelector('h1')
+    const h2Tag = document.querySelector('h2')
+    const pTag = document.querySelector('p')
+
+    const mouseoverHandler = function () {
+      h1Tag.textContent = 'I am being hovered!'
+    }
+
+    const mouseoutHandler = function () {
+      h1Tag.textContent = 'Hover me!'
+    }
+
+    const dblclickHandler = function () {
+      h2Tag.classList.toggle('font-crimson')
+    }
+
+    const mousewheelHandler = function () {
+      const randomText = randomTexts[Math.floor(Math.random() * randomTexts.length)]
+      pTag.textContent = randomText 
+    }
+
+    h1Tag.addEventListener('mouseover', mouseoverHandler)
+    h1Tag.addEventListener('mouseout', mouseoutHandler)
+    h2Tag.addEventListener('dblclick', dblclickHandler)
+    pTag.addEventListener('wheel', mousewheelHandler)
+
+  </script>
+</body>
+
+</html>

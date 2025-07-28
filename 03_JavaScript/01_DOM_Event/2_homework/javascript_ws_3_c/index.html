@@ -1,0 +1,86 @@
+<!--
+'text-input' class인 input 요소
+작성하는 텍스트는 실시간으로 p 요소 컨텐츠에 입력된다.
+input 요소에 focus가 잡히면
+p 요소의 폰트 크기를 2rem으로 변경한다. (fs-2 클래스 스타일 속성 활용)
+p 요소의 배경 컬러를 회색으로 변경한다. (bg-color 클래스 스타일 속성 활용)
+input 요소에 focus가 해제되면
+focus가 잡혔을 때 적용한 폰트 크기와 배경 컬러 스타일을 모두 해제한다.
+작성하는 텍스트 길이가 5 초과라면
+'warning' class인 span 요소를 화면에 출력한다.
+p 요소를 화면에 출력하지 않는다.
+작성하는 텍스트 길이가 5 이하라면
+'warning' class인 span 요소를 화면에 출력하지 않는다.
+p 요소를 화면에 출력한다.
+
+'color-input' class인 input 요소
+작성하는 텍스트가 CSS의 폰트 컬러 값으로 p 요소 컨텐츠에 실시간 반영된다.M:M
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bg-color {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .fs-2 {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h2>Input</h2>
+    <input type="text" class="text-input">
+    <span class="warning" style="color: red; display: none;">글자 수를 초과하였습니다.</span>
+    <p></p>
+  </div>
+  <div>
+    <h2>Color</h2>
+    <input type="text" class="color-input">
+  </div>
+
+  <script>
+    // 아래에 코드 작성
+    const textInput = document.querySelector('.text-input')
+    const warning = document.querySelector('.warning')
+    const p = document.querySelector('p')
+    const colorInput = document.querySelector('.color-input') 
+
+    textInput.addEventListener('input', function () {
+      const value = textInput.value
+
+      if (value.length > 5) {
+        warning.style.display = 'inline'
+        p.style.display = 'none'
+      } else {
+        warning.style.display = 'none'
+        p.style.display = 'block'
+        p.textContent = value
+      }
+    })
+
+    textInput.addEventListener('focus', function () {
+      p.classList.add('fs-2', 'bg-color')
+    })
+
+    textInput.addEventListener('blur', function () {
+      p.classList.remove('fs-2', 'bg-color')
+    })
+
+    colorInput.addEventListener('input', function() {
+      p.style.color = colorInput.value
+    })
+  </script>
+</body>
+
+</html>
