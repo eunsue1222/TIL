@@ -4,7 +4,7 @@
 def dfs(index, total):
     global answer
 
-    if total >= B:
+    if total >= B: # 가지치기
         answer = min(answer, total - B)
         return
 
