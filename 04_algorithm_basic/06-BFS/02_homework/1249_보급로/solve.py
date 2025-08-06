@@ -21,9 +21,9 @@ def bfs(x, y):
             nx = x + dx[d]
             ny = y + dy[d]
             if 0 <= nx < N and 0 <= ny < N: # 범위 체크
-                cost = distance[x][y] + grid[nx][ny] # 다음까지 최소 복구 시간 = 현재까지 최소 복구 시간 + 다음의 최소 복구 시간
-                if distance[nx][ny] > cost: # distance[nx][ny]: 해당 칸까지의 최소 복구 시간
-                    distance[nx][ny] = cost
+                cost = distance[x][y] + grid[nx][ny] # 다음까지 복구 시간 = 현재까지 최소 복구 시간 + 다음의 복구 시간
+                if distance[nx][ny] > cost: # 다음까지 최소 복구 시간 > 다음까지 복구 시간
+                    distance[nx][ny] = cost # 다음까지 최소 복구 시간 갱신
                     queue.append((nx, ny))
 
 
