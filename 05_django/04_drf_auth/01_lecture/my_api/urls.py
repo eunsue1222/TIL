@@ -24,5 +24,5 @@ urlpatterns = [
     path('api/v1/', include('articles.urls')),
     # path('accounts/', include('accounts.urls')),  # 세션 기반 인증 확인을 위한 URL, 후반부 과정에서 주석 처리 됨
     path('accounts/', include('dj_rest_auth.urls')),
-    # path('accounts/signup/', include('dj_rest_auth.registration.urls')),
+    path('accounts/signup/', include('dj_rest_auth.registration.urls')),
 ]
