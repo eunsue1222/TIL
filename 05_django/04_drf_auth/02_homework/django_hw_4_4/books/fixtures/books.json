@@ -1,0 +1,50 @@
+[
+  {
+    "model": "books.genre",
+    "pk": 1,
+    "fields": {"name": "Classic"}
+  },
+  {
+    "model": "books.genre",
+    "pk": 2,
+    "fields": {"name": "Drama"}
+  },
+  {
+    "model": "books.genre",
+    "pk": 3,
+    "fields": {"name": "Science Fiction"}
+  },
+  {
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+      "title": "To Kill a Mockingbird",
+      "published_date": "1960-07-11",
+      "borrowed": false,
+      "isbn": "9780060935467",
+      "genres": [1, 2]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+      "title": "1984",
+      "published_date": "1949-06-08",
+      "borrowed": false,
+      "isbn": "9780451524935",
+      "genres": [1, 3]
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "title": "Brave New World",
+      "published_date": "1932-08-01",
+      "borrowed": false,
+      "isbn": "9780060850524",
+      "genres": [3]
+    }
+  }
+]
