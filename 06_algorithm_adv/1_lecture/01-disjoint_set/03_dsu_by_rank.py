@@ -12,7 +12,7 @@ def make_set(n):
 
 def find_set(x):
     """기본 find_set (랭크 최적화 확인용)"""
-    # if x == parent[x]:
+    # if parent[x] != x:
     #     parent[x] = find_set(parent[x])
     # return parent[x]
     if x == parent[x]:
