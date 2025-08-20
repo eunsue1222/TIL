@@ -5,7 +5,7 @@ def prim(vertices, edges):
     visited = set() # 방문 확인
     start_vertex = vertices[0] # 시작 정점
 
-    min_heap = [(w, s, e) for e, w in adj_list[start_vertex]] # 시작 정점에서 갈 수 있는 정점들에 대한 간선 정보 [(가중치, 시작정점, 종료정점)]
+    min_heap = [(w, start_vertex, e) for e, w in adj_list[start_vertex]] # 시작 정점에서 갈 수 있는 정점들에 대한 간선 정보 [(가중치, 시작정점, 종료정점)]
     heapq.heapify(min_heap) # heapq에 삽입
     visited.add(start_vertex)
 
