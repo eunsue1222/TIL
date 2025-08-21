@@ -7,7 +7,6 @@ def dijkstra(graph, start):
     heap = [] # 최소 힙
     heapq.heappush(heap, [0, start]) # [도달한 거리, 시작정점]
     visited = set()
-    visited.add(start)
 
     while heap:
         dist, current = heapq.heappop(heap) # [도달한 거리, 시작정점]
