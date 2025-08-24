@@ -2,8 +2,8 @@
 # 하루에 한 번 물주기 가능 -> 물 안주기: 나무의높이+0, 홀수날: 나무의높이+1, 짝수날:나무의높이+2
 # 모든 나무의 키가 처음에 가장 키가 컸던 나무와 같아지도록 하는 최소 날짜 수?
 
-import sys
-sys.stdin = open('sample_input.txt')
+# import sys
+# sys.stdin = open('sample_input.txt')
 
 T = int(input())
 for test_case in range(1, T+1):
