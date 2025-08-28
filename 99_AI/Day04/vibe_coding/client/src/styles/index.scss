@@ -1,0 +1,8 @@
+@import './variables';
+@import 'bootstrap/scss/bootstrap';
+
+// Add any other global styles here
+
+.nav-link-custom-hover:hover {
+  color: #FE7E1D !important;
+}
