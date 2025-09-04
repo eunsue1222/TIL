@@ -10,8 +10,8 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const someFunction = function () {
-  // 진짜 엄청 복잡하고 대단한 로직
-  router.push({ name: 'userProfile' })
+  //진짜 엄청 복잡하고 대단한 로직
+  router.push({ name: 'userProfile', params: { 'username': 'admin'} })
 }
 </script>
 
