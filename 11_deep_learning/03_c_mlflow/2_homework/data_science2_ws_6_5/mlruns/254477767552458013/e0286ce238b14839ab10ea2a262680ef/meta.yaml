@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/254477767552458013/e0286ce238b14839ab10ea2a262680ef/artifacts
+end_time: 1759305991859
+entry_point_name: ''
+experiment_id: '254477767552458013'
+lifecycle_stage: active
+run_id: e0286ce238b14839ab10ea2a262680ef
+run_name: melodic-calf-386
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759305985506
+status: 3
+tags: []
+user_id: SSAFY

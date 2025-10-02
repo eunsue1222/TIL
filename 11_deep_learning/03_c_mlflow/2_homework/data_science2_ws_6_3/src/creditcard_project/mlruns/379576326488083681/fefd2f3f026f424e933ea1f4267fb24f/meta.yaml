@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/379576326488083681/fefd2f3f026f424e933ea1f4267fb24f/artifacts
+end_time: 1759297776992
+entry_point_name: ''
+experiment_id: '379576326488083681'
+lifecycle_stage: active
+run_id: fefd2f3f026f424e933ea1f4267fb24f
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759297771198
+status: 3
+tags: []
+user_id: SSAFY

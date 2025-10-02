@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/254477767552458013
+creation_time: 1759305985216
+experiment_id: '254477767552458013'
+last_update_time: 1759305985216
+lifecycle_stage: active
+name: creditcard_fraud_experiment

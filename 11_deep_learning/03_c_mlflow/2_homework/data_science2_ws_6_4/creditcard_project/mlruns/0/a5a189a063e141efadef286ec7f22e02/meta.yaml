@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/SSAFY/Desktop/TIL/11_deep_learning/03_c_mlflow/2_homework/data_science2_ws_6_4/creditcard_project/mlruns/0/a5a189a063e141efadef286ec7f22e02/artifacts
+end_time: 1759301541668
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a5a189a063e141efadef286ec7f22e02
+run_name: placid-skink-53
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759301537780
+status: 4
+tags: []
+user_id: SSAFY

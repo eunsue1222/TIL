@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/SSAFY/Desktop/TIL/11_deep_learning/03_c_mlflow/2_homework/data_science2_ws_6_4/creditcard_project/mlruns/625383246302989786/029b87ca363442d387808785165c0a28/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '625383246302989786'
+lifecycle_stage: active
+run_id: 029b87ca363442d387808785165c0a28
+run_name: awesome-whale-804
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759301729430
+status: 1
+tags: []
+user_id: SSAFY

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/186939203836003937/c762982c133246b2bb2946cee08fb4ac/artifacts
+end_time: 1759295403950
+entry_point_name: ''
+experiment_id: '186939203836003937'
+lifecycle_stage: active
+run_id: c762982c133246b2bb2946cee08fb4ac
+run_name: charming-ant-739
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759295403848
+status: 3
+tags: []
+user_id: SSAFY

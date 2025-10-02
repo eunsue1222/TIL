@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/379576326488083681
+creation_time: 1759297769079
+experiment_id: '379576326488083681'
+last_update_time: 1759297769079
+lifecycle_stage: active
+name: creditcard_experiment

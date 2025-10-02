@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/379576326488083681/ac51c3631e6a45a38b6c96d253da3b3e/artifacts
+end_time: 1759297991745
+entry_point_name: ''
+experiment_id: '379576326488083681'
+lifecycle_stage: active
+run_id: ac51c3631e6a45a38b6c96d253da3b3e
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759297777043
+status: 3
+tags: []
+user_id: SSAFY
